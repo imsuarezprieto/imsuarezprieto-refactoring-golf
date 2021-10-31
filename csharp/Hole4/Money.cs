@@ -22,5 +22,15 @@ namespace Hole4
 
             return new Money(value + other.value, other.currency);
         }
+
+        public Money Minus(Money other)
+        {
+            if (!currency.Equals(other.currency))
+            {
+                throw new Incalculable();
+            }
+
+            return new Money(value - other.value, currency);
+        }
     }
 }
