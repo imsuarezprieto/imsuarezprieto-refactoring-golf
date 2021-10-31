@@ -21,7 +21,7 @@ namespace Hole3
 
             foreach (Money next in monies)
             {
-                total = Plus(total, next);
+                total = total.Plus(next);
             }
 
             Double amount = total.value * (percent / 100d);
@@ -33,16 +33,6 @@ namespace Hole3
             }
 
             return new Money(total.value - tax.value, first.currency);
-        }
-
-        public Money Plus(Money total, Money other)
-        {
-            if (!other.currency.Equals(total.currency))
-            {
-                throw new Incalculable();
-            }
-
-            return new Money(total.value + other.value, other.currency);
         }
     }
 }
