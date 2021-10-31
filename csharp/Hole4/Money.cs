@@ -13,7 +13,7 @@ namespace Hole4
             this.currency = currency;
         }
 
-        public static Money Create(int value, string currency)
+        public static Money Create(int value, String currency)
         {
             return new Money(value, currency);
         }
