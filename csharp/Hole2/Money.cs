@@ -2,7 +2,7 @@
 
 namespace Hole2
 {
-    public class Money<A, B>
+    public class Money
     {
         public readonly int value;
         public readonly String currency;
