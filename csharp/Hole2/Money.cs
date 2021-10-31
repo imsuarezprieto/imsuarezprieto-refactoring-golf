@@ -4,12 +4,12 @@ namespace Hole2
 {
     public class Money<A, B>
     {
-        public readonly int first;
+        public readonly int value;
         public readonly String second;
 
-        public Money(int first, String second)
+        public Money(int value, String second)
         {
-            this.first = first;
+            this.value = value;
             this.second = second;
         }
     }

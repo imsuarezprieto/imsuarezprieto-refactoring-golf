@@ -29,10 +29,10 @@ namespace Hole2
 
             foreach (Money<int, String> next in pairs)
             {
-                total = new Money<int, String>(total.first + next.first, next.second);
+                total = new Money<int, String>(total.value + next.value, next.second);
             }
 
-            Double amount = total.first * (percent / 100d);
+            Double amount = total.value * (percent / 100d);
             Money<int, String> tax = new Money<int, String>(Convert.ToInt32(amount), first.second);
 
             if (!total.second.Equals(tax.second))
@@ -40,7 +40,7 @@ namespace Hole2
                 throw new Incalculable();
             }
 
-            return new Money<int, String>(total.first - tax.first, first.second);
+            return new Money<int, String>(total.value - tax.value, first.second);
         }
     }
 }
