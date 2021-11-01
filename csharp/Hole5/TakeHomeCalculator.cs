@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace Hole5
@@ -8,9 +7,9 @@ namespace Hole5
     {
         private readonly TaxRate taxRate;
 
-        public TakeHomeCalculator(int percent)
+        public TakeHomeCalculator(TaxRate taxRate)
         {
-            taxRate = TaxRate.Of(percent);
+            this.taxRate = taxRate;
         }
 
         public Money NetAmount(Money first, params Money[] rest)
