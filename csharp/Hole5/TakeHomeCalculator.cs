@@ -10,7 +10,7 @@ namespace Hole5
 
         public TakeHomeCalculator(int percent)
         {
-            taxRate = new TaxRate(percent);
+            taxRate = TaxRate.Of(percent);
         }
 
         public Money NetAmount(Money first, params Money[] rest)
