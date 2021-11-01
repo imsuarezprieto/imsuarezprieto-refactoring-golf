@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 
 namespace Hole6
 {
@@ -14,8 +13,7 @@ namespace Hole6
 
         public Money NetAmount(Money first, params Money[] rest)
         {
-            List<Money> monies = rest.ToList();
-            Money total = monies.Aggregate(first, (current, next) => current.Plus(next));
+            Money total = rest.ToList().Aggregate(first, (current, next) => current.Plus(next));
             Money tax = taxRate.Apply(total);
             return total.Minus(tax);
         }
